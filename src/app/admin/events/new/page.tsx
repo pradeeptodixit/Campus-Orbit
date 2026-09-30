@@ -28,7 +28,7 @@ export default function NewEventPage() {
     venueRoom: 'Auditorium A',
     venueFloor: 'Ground Floor',
     organizerName: 'Society Technical Lead',
-    organizerEmail: 'organizer@campusconnect.edu',
+    organizerEmail: 'organizer@campusorbit.edu',
     capacity: 100,
     registrationDeadline: new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     status: 'REGISTRATION_OPEN',

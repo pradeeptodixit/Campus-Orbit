@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Starting CampusConnect database seed...');
+  console.log('🌱 Starting Campus Orbit database seed...');
 
   // Clean existing tables
   await prisma.feedback.deleteMany();
@@ -18,7 +18,7 @@ async function main() {
   const adminUser = await prisma.user.create({
     data: {
       name: 'Campus Admin',
-      email: 'admin@campusconnect.edu',
+      email: 'admin@campusorbit.edu',
       passwordHash: 'admin123', // Demo credentials
       role: 'SUPER_ADMIN',
     },
@@ -35,7 +35,7 @@ async function main() {
       description: 'The premier developer community on campus. We host hackathons, competitive programming contests, open-source sprints, and peer learning sessions.',
       logo: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&auto=format&fit=crop&q=80',
       bannerImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80',
-      contactEmail: 'codingsociety@campusconnect.edu',
+      contactEmail: 'codingsociety@campusorbit.edu',
       github: 'https://github.com/campus-coding-soc',
       instagram: 'https://instagram.com/campus_coders',
       isFeatured: true,
@@ -47,7 +47,7 @@ async function main() {
       description: 'Exploring machine learning, deep learning, computer vision, autonomous systems, and hardware robotics. Join us to build futuristic AI projects.',
       logo: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300&auto=format&fit=crop&q=80',
       bannerImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80',
-      contactEmail: 'airobotics@campusconnect.edu',
+      contactEmail: 'airobotics@campusorbit.edu',
       github: 'https://github.com/campus-airobotics',
       isFeatured: true,
     },
@@ -58,7 +58,7 @@ async function main() {
       description: 'Defending networks, cracking CTFs, analyzing malware, and mastering ethical hacking. Learn offensive and defensive security from scratch.',
       logo: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=300&auto=format&fit=crop&q=80',
       bannerImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80',
-      contactEmail: 'cybersec@campusconnect.edu',
+      contactEmail: 'cybersec@campusorbit.edu',
       isFeatured: false,
     },
     {
@@ -68,7 +68,7 @@ async function main() {
       description: 'Transforming ideas into visually stunning and user-friendly digital experiences. Workshops in Figma, design systems, animation, and brand design.',
       logo: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=300&auto=format&fit=crop&q=80',
       bannerImage: 'https://images.unsplash.com/photo-1542744094-3a31b272c490?w=1200&auto=format&fit=crop&q=80',
-      contactEmail: 'design@campusconnect.edu',
+      contactEmail: 'design@campusorbit.edu',
       instagram: 'https://instagram.com/campus_designers',
       isFeatured: true,
     },
@@ -79,7 +79,7 @@ async function main() {
       description: 'Fostering startup culture, pitch competitions, founder talks, venture capital networking, and product management bootcamps.',
       logo: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&auto=format&fit=crop&q=80',
       bannerImage: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&auto=format&fit=crop&q=80',
-      contactEmail: 'ecell@campusconnect.edu',
+      contactEmail: 'ecell@campusorbit.edu',
       linkedin: 'https://linkedin.com/company/campus-ecell',
       isFeatured: false,
     },
@@ -90,7 +90,7 @@ async function main() {
       description: 'Stargazing nights, telescope workshops, astrophysics discussions, space mission analysis, and satellite engineering initiatives.',
       logo: 'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=300&auto=format&fit=crop&q=80',
       bannerImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80',
-      contactEmail: 'astro@campusconnect.edu',
+      contactEmail: 'astro@campusorbit.edu',
       isFeatured: false,
     },
   ];
@@ -135,7 +135,7 @@ async function main() {
       venueRoom: 'Auditorium A',
       venueFloor: 'Ground Floor',
       organizerName: 'Alex Rivera (President, Coding Soc)',
-      organizerEmail: 'alex.rivera@campusconnect.edu',
+      organizerEmail: 'alex.rivera@campusorbit.edu',
       capacity: 120,
       registrationDeadline: new Date(futureDate1.getTime() - 24 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -158,7 +158,7 @@ async function main() {
       venueRoom: 'Room 302',
       venueFloor: '3rd Floor',
       organizerName: 'Dr. Sophia Chen & AI Club Lead',
-      organizerEmail: 'ai.club@campusconnect.edu',
+      organizerEmail: 'ai.club@campusorbit.edu',
       capacity: 80,
       registrationDeadline: new Date(futureDate2.getTime() - 12 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -181,7 +181,7 @@ async function main() {
       venueRoom: 'Lab C-204',
       venueFloor: '2nd Floor',
       organizerName: 'Marcus Vance (Lead Security Analyst)',
-      organizerEmail: 'marcus.vance@campusconnect.edu',
+      organizerEmail: 'marcus.vance@campusorbit.edu',
       capacity: 60,
       registrationDeadline: new Date(futureDate3.getTime() - 24 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -204,7 +204,7 @@ async function main() {
       venueRoom: 'Studio B',
       venueFloor: '1st Floor',
       organizerName: 'Elena Rostova (Design Lead)',
-      organizerEmail: 'elena.design@campusconnect.edu',
+      organizerEmail: 'elena.design@campusorbit.edu',
       capacity: 50,
       registrationDeadline: new Date(futureDate4.getTime() - 12 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -227,7 +227,7 @@ async function main() {
       venueRoom: 'Grand Auditorium',
       venueFloor: '1st Floor',
       organizerName: 'E-Cell Executive Board',
-      organizerEmail: 'ecell.pitch@campusconnect.edu',
+      organizerEmail: 'ecell.pitch@campusorbit.edu',
       capacity: 250,
       registrationDeadline: new Date(todayDate.getTime() - 2 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -250,7 +250,7 @@ async function main() {
       venueRoom: 'Rooftop Observatory Deck',
       venueFloor: 'Roof (5th Floor)',
       organizerName: 'Leo Sterling (Astro Lead)',
-      organizerEmail: 'astro.lead@campusconnect.edu',
+      organizerEmail: 'astro.lead@campusorbit.edu',
       capacity: 40,
       registrationDeadline: new Date(now.getTime() + 9 * 24 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -273,7 +273,7 @@ async function main() {
       venueRoom: 'Lab 401',
       venueFloor: '4th Floor',
       organizerName: 'Coding Society Tech Leads',
-      organizerEmail: 'codingsociety@campusconnect.edu',
+      organizerEmail: 'codingsociety@campusorbit.edu',
       capacity: 70,
       registrationDeadline: new Date(pastDate1.getTime() - 12 * 60 * 60 * 1000),
       status: 'COMPLETED',
@@ -296,7 +296,7 @@ async function main() {
       venueRoom: 'Auditorium A',
       venueFloor: 'Ground Floor',
       organizerName: 'AI Club Research Team',
-      organizerEmail: 'ai.club@campusconnect.edu',
+      organizerEmail: 'ai.club@campusorbit.edu',
       capacity: 150,
       registrationDeadline: new Date(pastDate2.getTime() - 24 * 60 * 60 * 1000),
       status: 'COMPLETED',
@@ -319,7 +319,7 @@ async function main() {
       venueRoom: 'Hall 12',
       venueFloor: '1st Floor',
       organizerName: 'E-Cell PM Circle',
-      organizerEmail: 'ecell@campusconnect.edu',
+      organizerEmail: 'ecell@campusorbit.edu',
       capacity: 90,
       registrationDeadline: new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -342,7 +342,7 @@ async function main() {
       venueRoom: 'Art Gallery Main Hall',
       venueFloor: 'Ground Floor',
       organizerName: 'Design Society & Art Club',
-      organizerEmail: 'design@campusconnect.edu',
+      organizerEmail: 'design@campusorbit.edu',
       capacity: 300,
       registrationDeadline: new Date(now.getTime() + 19 * 24 * 60 * 60 * 1000),
       status: 'REGISTRATION_OPEN',
@@ -438,7 +438,7 @@ async function main() {
     },
   });
 
-  console.log('🎉 CampusConnect Database Seed Completed Successfully!');
+  console.log('🎉 Campus Orbit Database Seed Completed Successfully!');
 }
 
 main()

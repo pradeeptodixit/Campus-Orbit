@@ -18,7 +18,6 @@ import {
   ChevronRight,
   User,
   Code,
-  ExternalLink,
 } from 'lucide-react';
 
 import { Navbar } from '@/components/Navbar';
@@ -160,7 +159,7 @@ function HomePageContent() {
                 Campus <span className="gradient-text">Orbit</span>
               </h1>
               <p className="text-lg sm:text-xl font-semibold text-slate-300 max-w-2xl mx-auto tracking-wide">
-                The Intelligent Campus Event & Community Platform
+                Where Campus Events, Communities &amp; Experiences Come Together.
               </p>
             </div>
 
@@ -169,7 +168,7 @@ function HomePageContent() {
               <div className="flex items-center gap-2 mb-1">
                 <Sparkles className="w-3.5 h-3.5 text-indigo-400 group-hover:rotate-12 transition" />
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-indigo-300">
-                  CREATED & DEVELOPED BY
+                  CREATED &amp; DEVELOPED BY
                 </span>
                 <Sparkles className="w-3.5 h-3.5 text-indigo-400 group-hover:-rotate-12 transition" />
               </div>
@@ -177,16 +176,7 @@ function HomePageContent() {
                 PRADEEPTO DIXIT
               </h2>
               <p className="text-[11px] text-slate-400 mt-1 font-medium flex items-center gap-2">
-                <span>Creator & Full-Stack Architect</span>
-                <span>•</span>
-                <a
-                  href="https://github.com/pradeeptodixit/Campus-Orbit"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-indigo-400 hover:text-indigo-300 underline font-semibold flex items-center gap-0.5"
-                >
-                  GitHub @pradeeptodixit <ExternalLink className="w-2.5 h-2.5" />
-                </a>
+                <span>Creator &amp; Full-Stack Architect</span>
               </p>
             </div>
 

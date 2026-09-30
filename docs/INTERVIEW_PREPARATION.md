@@ -60,7 +60,7 @@ Live Demo: [https://campus-orbit-sand.vercel.app/](https://campus-orbit-sand.ver
 ---
 
 ### Q8: How does admin authentication work?
-**Answer:** Admins authenticate via `POST /api/admin/login` using credentials (e.g. `admin@campusconnect.edu` / `admin123`). Upon verification, the server sets an `HttpOnly` secure session cookie (`campusconnect_admin_session`) and returns admin role state to protect client routes.
+**Answer:** Admins authenticate via `POST /api/admin/login` using credentials (e.g. `admin@campusorbit.edu` / `admin123`). Upon verification, the server sets an `HttpOnly` secure session cookie (`campusorbit_admin_session`) and returns admin role state to protect client routes.
 
 ---
 

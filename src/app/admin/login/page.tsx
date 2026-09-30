@@ -17,7 +17,7 @@ function AdminLoginContent() {
   const router = useRouter();
   const { toast } = useToast();
 
-  const [email, setEmail] = useState('admin@campusconnect.edu');
+  const [email, setEmail] = useState('admin@campusorbit.edu');
   const [password, setPassword] = useState('admin123');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -69,7 +69,7 @@ function AdminLoginContent() {
           <p className="font-bold flex items-center gap-1.5">
             <Shield className="w-3.5 h-3.5" /> Demo Admin Credentials:
           </p>
-          <p className="font-mono text-[11px]">Email: admin@campusconnect.edu</p>
+          <p className="font-mono text-[11px]">Email: admin@campusorbit.edu</p>
           <p className="font-mono text-[11px]">Password: admin123</p>
         </div>
 

@@ -36,7 +36,7 @@ export async function POST(request: Request) {
 
     // Set secure cookie for admin session
     response.cookies.set({
-      name: 'campusconnect_admin_session',
+      name: 'campusorbit_admin_session',
       value: JSON.stringify({ id: user.id, role: user.role, email: user.email }),
       httpOnly: true,
       path: '/',

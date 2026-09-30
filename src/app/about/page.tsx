@@ -106,27 +106,7 @@ function AboutPageContent() {
                 PROJECT CREATOR
               </span>
               <h2 className="text-xl font-bold text-white gradient-text-cyan">PRADEEPTO DIXIT</h2>
-              <p className="text-xs text-slate-400 font-medium">Creator & Full-Stack Developer</p>
-              <div className="pt-2 border-t border-slate-900 flex flex-col gap-2 text-xs">
-                <a
-                  href="https://github.com/pradeeptodixit/Campus-Orbit"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between text-indigo-400 hover:text-indigo-300 font-semibold"
-                >
-                  <span>GitHub Repository</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-                <a
-                  href="https://campus-orbit-sand.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between text-purple-400 hover:text-purple-300 font-semibold"
-                >
-                  <span>Live Demo</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
+              <p className="text-xs text-slate-400 font-medium">Creator &amp; Full-Stack Developer</p>
             </div>
           </div>
         </div>

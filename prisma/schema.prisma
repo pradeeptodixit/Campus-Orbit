@@ -1,4 +1,4 @@
-// Prisma Schema for CampusConnect
+// Prisma Schema for Campus Orbit
 
 generator client {
   provider = "prisma-client-js"

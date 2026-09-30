@@ -38,7 +38,7 @@ Campus Orbit is an original software project created and developed by Pradeepto 
 - **Grounded Campus AI Assistant**: Live event chatbot backed strictly by real database queries.
 
 ### 🛡️ Admin & Society Lead Experience
-- **Admin Portal & Authentication**: Secure admin login (`admin@campusconnect.edu` / `admin123`).
+- **Admin Portal & Authentication**: Secure admin login (`admin@campusorbit.edu` / `admin123`).
 - **Full Event Lifecycle & Draft System**: Draft -> Published -> Registration Open -> Registration Closed -> Completed.
 - **Event Health Checker**: Pre-publish validation panel (title, description, date, venue, capacity, deadline, conflicts).
 - **Scheduling Conflict Detection**: Prevents double-booking same venue on overlapping date/time slots.
@@ -87,7 +87,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 🔐 Demo Credentials
 
 - **Admin Portal URL**: `http://localhost:3000/admin/login`
-- **Email**: `admin@campusconnect.edu`
+- **Email**: `admin@campusorbit.edu`
 - **Password**: `admin123`
 
 ---

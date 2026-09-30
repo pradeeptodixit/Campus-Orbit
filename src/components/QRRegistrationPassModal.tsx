@@ -61,7 +61,7 @@ export function QRRegistrationPassModal({ registration, isOpen, onClose }: QRReg
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: registration.event?.title || 'CampusConnect Event',
+        title: registration.event?.title || 'Campus Orbit Event',
         text: `I registered for ${registration.event?.title}! Pass Code: ${registration.registrationCode}`,
         url: window.location.href,
       }).catch(() => {});
