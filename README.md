@@ -63,27 +63,6 @@ Campus Orbit is an original software project created and developed by Pradeepto 
 
 ## 🚀 Running Locally
 
-### 1. Installation
-```bash
-git clone https://github.com/pradeeptodixit/Campus-Orbit.git
-cd Campus-Orbit
-npm install
-```
-
-### 2. Database Setup & Seeding
-```bash
-npx prisma db push
-npx tsx prisma/seed.ts
-```
-
-### 3. Start Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
 ## 🔐 Demo Credentials
 
 - **Admin Portal URL**: `http://localhost:3000/admin/login`
@@ -95,4 +74,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## 📁 Technical Documentation
 
 - [System Architecture](docs/ARCHITECTURE.md)
-- [Technical Interview Preparation Guide](docs/INTERVIEW_PREPARATION.md)
