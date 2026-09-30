@@ -1,0 +1,124 @@
+// Prisma Schema for CampusConnect
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("SUPER_ADMIN") // SUPER_ADMIN, CLUB_ADMIN, ORGANIZER
+  clubId       String?
+  club         Club?    @relation(fields: [clubId], references: [id], onDelete: SetNull)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Club {
+  id           String   @id @default(uuid())
+  name         String
+  slug         String   @unique
+  description  String
+  category     String
+  logo         String?
+  bannerImage  String?
+  contactEmail String?
+  website      String?
+  instagram    String?
+  github       String?
+  linkedin     String?
+  isFeatured   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  events Event[]
+  users  User[]
+}
+
+model Event {
+  id                   String   @id @default(uuid())
+  clubId               String
+  club                 Club     @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  title                String
+  slug                 String   @unique
+  shortDescription     String
+  description          String
+  category             String
+  date                 DateTime
+  startTime            String
+  endTime              String
+  venue                String
+  venueBuilding        String?
+  venueRoom            String?
+  venueFloor           String?
+  organizerName        String
+  organizerEmail       String?
+  capacity             Int
+  registrationDeadline DateTime
+  status               String   @default("REGISTRATION_OPEN") // DRAFT, PUBLISHED, REGISTRATION_OPEN, REGISTRATION_CLOSED, ONGOING, COMPLETED, CANCELLED
+  featured             Boolean  @default(false)
+  image                String?
+  tags                 String   @default("[]") // JSON string of tags
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  registrations Registration[]
+  feedbacks     Feedback[]
+}
+
+model Registration {
+  id               String   @id @default(uuid())
+  registrationCode String   @unique
+  eventId          String
+  event            Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name             String
+  email            String
+  collegeYear      String
+  phone            String
+  branch           String?
+  studentId        String?
+  status           String   @default("CONFIRMED") // CONFIRMED, WAITLISTED, CANCELLED, CHECKED_IN
+  waitlistPosition Int?
+  registeredAt     DateTime @default(now())
+
+  checkIn  CheckIn?
+  feedback Feedback?
+
+  @@unique([eventId, email])
+}
+
+model CheckIn {
+  id             String       @id @default(uuid())
+  registrationId String       @unique
+  registration   Registration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  checkedInAt    DateTime     @default(now())
+  checkedInBy    String
+}
+
+model Feedback {
+  id             String        @id @default(uuid())
+  eventId        String
+  event          Event         @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  registrationId String?       @unique
+  registration   Registration? @relation(fields: [registrationId], references: [id], onDelete: SetNull)
+  rating         Int           // 1 to 5
+  comment        String?
+  createdAt      DateTime      @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  actor      String
+  action     String
+  entityType String
+  entityId   String
+  metadata   String?  // JSON string
+  createdAt  DateTime @default(now())
+}
