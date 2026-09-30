@@ -60,7 +60,7 @@ function AdminLoginContent() {
           <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center mx-auto shadow-lg shadow-indigo-600/30">
             <Shield className="w-6 h-6 text-white" />
           </div>
-          <h1 className="text-2xl font-black text-white">CampusConnect Admin</h1>
+          <h1 className="text-2xl font-black text-white">Campus Orbit Admin</h1>
           <p className="text-xs text-slate-400">Authenticate to access the society management portal.</p>
         </div>
 

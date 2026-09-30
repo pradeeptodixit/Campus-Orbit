@@ -1,15 +1,21 @@
-# CampusConnect — System Architecture & Design Documentation
+# Campus Orbit — System Architecture & Design Documentation
+
+**Created & Developed by Pradeepto Dixit**  
+GitHub: [https://github.com/pradeeptodixit/Campus-Orbit](https://github.com/pradeeptodixit/Campus-Orbit)  
+Live Demo: [https://campus-orbit-sand.vercel.app/](https://campus-orbit-sand.vercel.app/)
+
+---
 
 ## 1. System Overview
 
-CampusConnect is designed as a modular, full-stack Next.js web platform for college society events and registrations.
+Campus Orbit is an intelligent campus event and community platform engineered by Pradeepto Dixit.
 
 ```mermaid
 flowchart TD
-    Client["Student & Admin Browsers"] --> NextRouter["Next.js App Router & Server Actions"]
+    Client["Student & Admin Browsers"] --> NextRouter["Next.js App Router"]
     NextRouter --> API["REST API Route Handlers (/api/*)"]
     API --> Zod["Zod Validation & Business Logic Engine"]
-    Zod --> Prisma["Prisma ORM (Data Access Layer)"]
+    Zod --> Prisma["Prisma ORM"]
     Prisma --> SQLite["SQLite Database (dev.db)"]
     
     API --> QRPass["QR Pass & .ics Generator Engine"]
@@ -38,10 +44,16 @@ flowchart TD
 
 ## 3. Database Schema Overview
 
-- **User**: System admins and society event leads (`SUPER_ADMIN`, `CLUB_ADMIN`, `ORGANIZER`).
+- **User**: System admins and society event leads.
 - **Club**: Student societies and chapters.
 - **Event**: Core event entities with capacity, date/time, venue details, status, and tags.
 - **Registration**: Student registrations with unique registration codes, duplicate protection, and waitlist tracking.
 - **CheckIn**: Attendance verification records linked to registrations.
 - **Feedback**: Post-event rating (1-5 stars) and reviews.
 - **AuditLog**: System activity log for admin security and audit trails.
+
+---
+
+## 4. Project Ownership & License Notice
+
+Campus Orbit is an original software project designed and developed by Pradeepto Dixit. Copyright © 2026 Pradeepto Dixit. All rights reserved. Third-party libraries, frameworks, icons, fonts, assets and open-source components remain subject to their respective licenses.

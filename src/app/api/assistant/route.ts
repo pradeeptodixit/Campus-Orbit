@@ -70,7 +70,7 @@ export async function POST(request: Request) {
         responseText += `• **Seats:** ${ev._count.registrations}/${ev.capacity} (${capacityInfo.label})\n`;
         responseText += `• **Status:** ${statusInfo.label}\n\n`;
       });
-      responseText += `*All details were retrieved live from CampusConnect database.*`;
+      responseText += `*All details were retrieved live from Campus Orbit database.*`;
     } else {
       responseText = `I searched our official campus database, but couldn't find any active events matching **"${query}"**.\n\nYou can browse all upcoming events by category or check back as society leads publish new schedules!`;
     }

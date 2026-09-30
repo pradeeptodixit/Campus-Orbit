@@ -15,7 +15,7 @@ export function EventAssistantModal({ isOpen, onClose }: EventAssistantModalProp
   const [messages, setMessages] = useState<Array<{ sender: 'user' | 'bot'; text: string; references?: any[] }>>([
     {
       sender: 'bot',
-      text: "👋 Hi! I'm your **CampusConnect Assistant**. Ask me about upcoming workshops, hackathons, society events, venues, or registration deadlines on campus!",
+      text: "👋 Hi! I'm your **Campus Orbit Assistant**. Ask me about upcoming workshops, hackathons, society events, venues, or registration deadlines on campus!",
     },
   ]);
 

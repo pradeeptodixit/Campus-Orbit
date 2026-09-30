@@ -1,8 +1,27 @@
-# 🚀 CampusConnect — Intelligent College Club & Event Management Platform
+# Campus Orbit
 
-> **"One Campus. Every Event. One Intelligent Experience."**
+> **The Intelligent Campus Event & Community Platform**
 
-CampusConnect is a production-quality college club and event management platform built as a recruitment portfolio project. It connects students, society leads, event organizers, and campus administrators into a unified digital operating system.
+**Created & Developed by Pradeepto Dixit**
+
+- **GitHub Repository**: [https://github.com/pradeeptodixit/Campus-Orbit](https://github.com/pradeeptodixit/Campus-Orbit)
+- **Live Demo**: [https://campus-orbit-sand.vercel.app/](https://campus-orbit-sand.vercel.app/)
+
+---
+
+## 🌟 Overview
+
+Campus Orbit is an intelligent campus event and community platform designed to connect students with college societies, events, registrations, desk check-ins, and campus activities.
+
+---
+
+## 👨‍💻 Author & Project Ownership
+
+**Pradeepto Dixit**  
+Creator & Full-Stack Developer of Campus Orbit.
+
+### Project Ownership & Attribution
+Campus Orbit is an original software project created and developed by Pradeepto Dixit. Copyright © 2026 Pradeepto Dixit. All rights reserved. Third-party libraries, frameworks, icons, fonts, and open-source components remain subject to their respective licenses.
 
 ---
 
@@ -34,7 +53,7 @@ CampusConnect is a production-quality college club and event management platform
 
 - **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS v4, Glassmorphism, Custom Design Tokens
+- **Styling**: Tailwind CSS v4, Dark Glassmorphism, Custom Design Tokens
 - **Icons**: Lucide React
 - **Database & ORM**: SQLite (`dev.db`), Prisma ORM 5.22.0
 - **Validation**: Zod
@@ -42,72 +61,22 @@ CampusConnect is a production-quality college club and event management platform
 
 ---
 
-## 📊 Database Schema
-
-```prisma
-model User {
-  id           String   @id @default(uuid())
-  name         String
-  email        String   @unique
-  passwordHash String
-  role         String   @default("SUPER_ADMIN")
-  createdAt    DateTime @default(now())
-}
-
-model Club {
-  id          String   @id @default(uuid())
-  name        String
-  slug        String   @unique
-  description String
-  category    String
-  events      Event[]
-}
-
-model Event {
-  id                   String   @id @default(uuid())
-  clubId               String
-  title                String
-  slug                 String   @unique
-  date                 DateTime
-  venue                String
-  capacity             Int
-  status               String   @default("REGISTRATION_OPEN")
-  registrations        Registration[]
-}
-
-model Registration {
-  id               String   @id @default(uuid())
-  registrationCode String   @unique
-  eventId          String
-  name             String
-  email            String
-  status           String   @default("CONFIRMED")
-  @@unique([eventId, email])
-}
-```
-
----
-
 ## 🚀 Running Locally
 
-### 1. Prerequisites
-- Node.js v18+ 
-- npm v9+
-
-### 2. Installation
+### 1. Installation
 ```bash
-git clone https://github.com/your-username/campus-connect.git
-cd campus-connect
+git clone https://github.com/pradeeptodixit/Campus-Orbit.git
+cd Campus-Orbit
 npm install
 ```
 
-### 3. Database Setup & Seeding
+### 2. Database Setup & Seeding
 ```bash
 npx prisma db push
 npx tsx prisma/seed.ts
 ```
 
-### 4. Start Development Server
+### 3. Start Development Server
 ```bash
 npm run dev
 ```
@@ -127,15 +96,3 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 - [System Architecture](docs/ARCHITECTURE.md)
 - [Technical Interview Preparation Guide](docs/INTERVIEW_PREPARATION.md)
-
----
-
-## 🏆 Recruitment Demo Flow (5-7 Mins)
-
-1. **Home (`/`)**: Show Campus Pulse & Smart Discovery.
-2. **Events (`/events`)**: Test search & category filtering.
-3. **Event Detail (`/events/[slug]`)**: View dynamic countdown, timeline, and capacity indicator.
-4. **Register**: Submit a student registration & view the generated QR Pass.
-5. **Admin Portal (`/admin`)**: Log in as admin, view live analytics updates.
-6. **Check-In (`/admin/checkin`)**: Scan or enter the pass code (`CC-2026-101`) to verify attendance.
-7. **CSV Export (`/admin/registrations`)**: Export filtered registration records.

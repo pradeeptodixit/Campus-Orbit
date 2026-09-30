@@ -16,6 +16,9 @@ import {
   Shield,
   Layers,
   ChevronRight,
+  User,
+  Code,
+  ExternalLink,
 } from 'lucide-react';
 
 import { Navbar } from '@/components/Navbar';
@@ -116,12 +119,10 @@ function HomePageContent() {
     ? events
     : events.filter((ev) => ev.category.toLowerCase() === activeCategory.toLowerCase());
 
-  const featuredEvent = events.find((e) => e.featured) || events[0];
-
   return (
     <div className="min-h-screen flex flex-col bg-[#090d16] text-slate-100 selection:bg-indigo-600 selection:text-white">
       {/* Navigation */}
-      <Navbar onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(false)} />
+      <Navbar onOpenSearch={() => setSearchOpen(true)} onOpenAssistant={() => setAssistantOpen(true)} />
 
       {/* Global Modals */}
       <GlobalSearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
@@ -140,30 +141,61 @@ function HomePageContent() {
         onClose={() => setConfirmedRegistration(null)}
       />
 
-      <main className="flex-1 space-y-16 pt-24 pb-16">
-        {/* 1. HERO SECTION */}
+      <main className="flex-1 space-y-16 pt-20 pb-16">
+        {/* 1. TOPMOST HERO SECTION WITH PROMINENT CREATOR AUTHORSHIP */}
         <section className="relative pt-12 pb-16 overflow-hidden">
-          {/* Subtle Ambient Background Gradients */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-indigo-600/20 via-purple-600/15 to-pink-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+          {/* Ambient Background Gradients */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-gradient-to-tr from-indigo-600/20 via-purple-600/15 to-pink-500/10 rounded-full blur-[130px] pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
-            {/* Live Badge */}
+            {/* Top Product Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-indigo-500/30 text-xs font-semibold text-indigo-300 shadow-xl shadow-indigo-950/50 animate-in fade-in duration-500">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Campus Digital Operating System 2026</span>
+              <span>Official Product Platform • 2026</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
-              Discover What's <span className="gradient-text">Happening on Campus.</span>
-            </h1>
+            {/* Product Headline */}
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
+                Campus <span className="gradient-text">Orbit</span>
+              </h1>
+              <p className="text-lg sm:text-xl font-semibold text-slate-300 max-w-2xl mx-auto tracking-wide">
+                The Intelligent Campus Event & Community Platform
+              </p>
+            </div>
 
-            {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Find workshops, hackathons, competitions, talks, cultural events and student communities — all in one intelligent experience.
+            {/* PROMINENT CREATOR / AUTHOR BADGE & IDENTITY */}
+            <div className="inline-flex flex-col items-center justify-center p-4 sm:p-5 rounded-2xl bg-gradient-to-tr from-slate-900/90 via-slate-900/95 to-slate-950/90 border border-indigo-500/30 shadow-2xl backdrop-blur-xl max-w-md mx-auto transform hover:scale-[1.02] transition duration-300 group">
+              <div className="flex items-center gap-2 mb-1">
+                <Sparkles className="w-3.5 h-3.5 text-indigo-400 group-hover:rotate-12 transition" />
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-indigo-300">
+                  CREATED & DEVELOPED BY
+                </span>
+                <Sparkles className="w-3.5 h-3.5 text-indigo-400 group-hover:-rotate-12 transition" />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-wider gradient-text-cyan uppercase">
+                PRADEEPTO DIXIT
+              </h2>
+              <p className="text-[11px] text-slate-400 mt-1 font-medium flex items-center gap-2">
+                <span>Creator & Full-Stack Architect</span>
+                <span>•</span>
+                <a
+                  href="https://github.com/pradeeptodixit/Campus-Orbit"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-indigo-400 hover:text-indigo-300 underline font-semibold flex items-center gap-0.5"
+                >
+                  GitHub @pradeeptodixit <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+              </p>
+            </div>
+
+            {/* Supporting Product Copy */}
+            <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+              Find workshops, hackathons, competitions, tech talks, cultural events and student societies — all in one intelligent, verifiable platform.
             </p>
 
-            {/* Action CTAs */}
+            {/* Primary Product CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
                 href="/events"
@@ -234,7 +266,7 @@ function HomePageContent() {
             <div className="text-center py-16 bg-slate-900/40 rounded-3xl border border-slate-800 space-y-3">
               <Calendar className="w-12 h-12 text-slate-600 mx-auto" />
               <h3 className="text-base font-bold text-slate-300">No events found in this category</h3>
-              <p className="text-xs text-slate-500">The campus kitchen is quiet for now. Check back soon!</p>
+              <p className="text-xs text-slate-500">Check back soon as society leads publish new schedules!</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -311,14 +343,14 @@ function HomePageContent() {
           </div>
         </section>
 
-        {/* 6. HOW CAMPUSCONNECT WORKS */}
+        {/* 6. HOW CAMPUS ORBIT WORKS */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800/80 space-y-8 relative overflow-hidden">
             <div className="text-center max-w-2xl mx-auto space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-indigo-400">Complete Product Loop</span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-white">How CampusConnect Works</h2>
+              <span className="text-xs font-bold uppercase tracking-wider text-indigo-400">Product Lifecycle</span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white">How Campus Orbit Works</h2>
               <p className="text-xs sm:text-sm text-slate-400">
-                From event discovery to instant QR check-in — seamless campus engagement for students & society leads.
+                Designed and developed by Pradeepto Dixit for seamless campus engagement.
               </p>
             </div>
 

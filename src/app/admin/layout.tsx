@@ -44,7 +44,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="md:hidden bg-slate-950 border-b border-slate-800 p-4 flex items-center justify-between sticky top-0 z-40">
           <Link href="/admin" className="flex items-center gap-2 font-bold text-white text-sm">
             <Shield className="w-5 h-5 text-indigo-400" />
-            <span>CampusConnect Admin</span>
+            <span>Campus Orbit Admin</span>
           </Link>
           <button
             onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}

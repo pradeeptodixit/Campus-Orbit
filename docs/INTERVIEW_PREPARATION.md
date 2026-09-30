@@ -1,11 +1,13 @@
-# CampusConnect — Society Recruitment Technical Interview Preparation
+# Campus Orbit — Technical Interview Preparation Guide
 
-This document contains answers to all technical interview questions about CampusConnect based on the actual codebase implementation.
+**Created & Developed by Pradeepto Dixit**  
+GitHub: [https://github.com/pradeeptodixit/Campus-Orbit](https://github.com/pradeeptodixit/Campus-Orbit)  
+Live Demo: [https://campus-orbit-sand.vercel.app/](https://campus-orbit-sand.vercel.app/)
 
 ---
 
-### Q1: Why did you build CampusConnect?
-**Answer:** Campus events and society registrations in colleges are often fragmented across Google Forms, manual spreadsheets, and WhatsApp groups. This leads to duplicate registrations, lost student passes, unknown attendance metrics, and scheduling conflicts in campus auditoriums. I built CampusConnect as an integrated campus event intelligence platform that unifies event discovery, registration with instant duplicate prevention, QR desk check-ins, and verifiable analytics.
+### Q1: Why did you build Campus Orbit?
+**Answer:** Campus events and society registrations in colleges are often fragmented across Google Forms, manual spreadsheets, and WhatsApp groups. This leads to duplicate registrations, lost student passes, unknown attendance metrics, and scheduling conflicts in campus auditoriums. I created and developed Campus Orbit as an integrated campus event intelligence platform that unifies event discovery, registration with instant duplicate prevention, QR desk check-ins, and verifiable analytics.
 
 ---
 

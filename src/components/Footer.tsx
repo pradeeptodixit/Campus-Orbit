@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Calendar, Shield, Heart, MapPin, Mail, Globe } from 'lucide-react';
+import { Calendar, Shield, Heart, MapPin, Mail, Globe, Code, Compass, User } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -8,22 +8,20 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
         {/* Brand Column */}
         <div className="space-y-4 md:col-span-1">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
-              <Calendar className="w-4 h-4 text-white" />
+              <Compass className="w-4 h-4 text-white" />
             </div>
             <span className="text-lg font-bold text-white tracking-tight">
-              Campus<span className="gradient-text">Connect</span>
+              Campus<span className="gradient-text">Orbit</span>
             </span>
           </Link>
           <p className="text-xs text-slate-400 leading-relaxed">
-            The intelligent digital operating system for college society events, registrations, check-ins, and campus engagement.
+            The Intelligent Campus Event & Community Platform for college society events, registrations, desk check-ins, and campus engagement.
           </p>
-          <div className="flex items-center gap-3 pt-1">
-            <span className="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              Live Database Active
-            </span>
+          <div className="flex items-center gap-2 text-xs text-slate-300 bg-slate-900/80 p-2.5 rounded-xl border border-slate-800">
+            <User className="w-4 h-4 text-indigo-400 shrink-0" />
+            <span>Created & Developed by <strong className="text-white">Pradeepto Dixit</strong></span>
           </div>
         </div>
 
@@ -41,7 +39,7 @@ export function Footer() {
               <Link href="/my-events" className="hover:text-indigo-400 transition">My Registrations</Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-indigo-400 transition">Campus Map & Venues</Link>
+              <Link href="/about" className="hover:text-indigo-400 transition">Campus Map & Creator Info</Link>
             </li>
           </ul>
         </div>
@@ -65,25 +63,30 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Contact & Campus Info */}
+        {/* Creator & Links */}
         <div className="space-y-3">
-          <h4 className="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-4">Campus Hub</h4>
-          <div className="flex items-start gap-2 text-xs">
-            <MapPin className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-            <span>Central Technology Campus, University Block A</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs">
+          <h4 className="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-4">Project Links</h4>
+          <a
+            href="https://github.com/pradeeptodixit/Campus-Orbit"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-xs text-indigo-400 hover:text-indigo-300 font-semibold bg-slate-900/60 p-2.5 rounded-xl border border-indigo-500/20 transition"
+          >
+            <Code className="w-4 h-4 text-indigo-400" />
+            <span>GitHub Repository</span>
+          </a>
+          <div className="flex items-center gap-2 text-xs text-slate-400">
             <Mail className="w-4 h-4 text-indigo-400 shrink-0" />
-            <span>events@campusconnect.edu</span>
+            <span>contact@pradeeptodixit.dev</span>
           </div>
         </div>
       </div>
 
-      {/* Bottom Copyright */}
+      {/* Bottom Copyright & Attribution */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-        <p>© 2026 CampusConnect. All campus data verified in real-time.</p>
-        <p className="flex items-center gap-1">
-          Built with precision for society recruitment portfolio.
+        <p>© 2026 Pradeepto Dixit. All rights reserved.</p>
+        <p className="text-slate-400">
+          Campus Orbit is an original project designed and developed by <strong className="text-slate-200">Pradeepto Dixit</strong>.
         </p>
       </div>
     </footer>

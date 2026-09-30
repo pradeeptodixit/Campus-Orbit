@@ -160,7 +160,7 @@ export function generateICSFile(event: {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//CampusConnect//Campus Event Calendar//EN',
+    'PRODID:-//CampusOrbit//Campus Event Calendar//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',

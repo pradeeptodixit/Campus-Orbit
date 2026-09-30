@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Sparkles, Calendar, Users, Shield, Search, Menu, X, Bot } from 'lucide-react';
+import { Calendar, Shield, Search, Menu, X, Bot, Compass, User } from 'lucide-react';
 
 interface NavbarProps {
   onOpenSearch?: () => void;
@@ -28,29 +28,29 @@ export function Navbar({ onOpenSearch, onOpenAssistant }: NavbarProps) {
     { href: '/events', label: 'Events' },
     { href: '/clubs', label: 'Societies & Clubs' },
     { href: '/my-events', label: 'My Registrations' },
-    { href: '/about', label: 'About' },
+    { href: '/about', label: 'About & Creator' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? 'bg-slate-950/85 backdrop-blur-md border-b border-slate-800/60 shadow-xl py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 shadow-xl py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        {/* Brand Logo & Creator Micro-Badge */}
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 p-0.5 shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition duration-300">
             <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-              <Calendar className="w-5 h-5 text-indigo-400 group-hover:rotate-12 transition duration-300" />
+              <Compass className="w-5 h-5 text-indigo-400 group-hover:rotate-45 transition duration-300" />
             </div>
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
-              Campus<span className="gradient-text">Connect</span>
+              Campus<span className="gradient-text">Orbit</span>
             </span>
-            <span className="text-[10px] text-indigo-400 font-medium tracking-wider uppercase">
-              Event Intelligence
+            <span className="text-[10px] text-slate-400 font-medium tracking-wide flex items-center gap-1">
+              by <span className="text-indigo-300 font-semibold">Pradeepto Dixit</span>
             </span>
           </div>
         </Link>
@@ -133,6 +133,11 @@ export function Navbar({ onOpenSearch, onOpenAssistant }: NavbarProps) {
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-slate-950/95 border-b border-slate-800 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top-4">
+          <div className="flex items-center justify-between px-2 py-1 text-xs text-slate-400 border-b border-slate-800/80 mb-2">
+            <span>Campus Orbit</span>
+            <span className="text-indigo-400 font-medium">by Pradeepto Dixit</span>
+          </div>
+
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <Link
